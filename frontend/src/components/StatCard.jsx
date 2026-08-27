@@ -1,0 +1,1 @@
+export default function StatCard({ label, value, icon: Icon, hint }) { return <article className="stat-card glass"><div className="stat-icon">{Icon && <Icon size={20}/>}</div><p>{label}</p><strong>{value}</strong>{hint && <small>{hint}</small>}</article>; }

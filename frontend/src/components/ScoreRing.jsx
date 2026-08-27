@@ -1,0 +1,1 @@
+export default function ScoreRing({ score, label = "Donor score" }) { const valid = Number(score); const value = Number.isFinite(valid) ? Math.max(0, Math.min(100, valid)) : null; return <div className="score-ring" style={{ "--score": `${value ?? 0}%` }}><div>{value === null ? "N/A" : value.toFixed(1)}<small>{label}</small></div></div>; }
