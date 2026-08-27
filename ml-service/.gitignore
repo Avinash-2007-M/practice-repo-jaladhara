@@ -1,0 +1,44 @@
+# --- Python ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+*.db
+*.egg-info/
+*.egg
+*.log
+
+# --- Virtual environments ---
+.venv/
+venv/
+env/
+
+# --- ML / Data files ---
+*.h5
+*.pkl
+*.joblib
+*.csv
+*.tsv
+*.json
+*.parquet
+*.npy
+*.npz
+
+# --- Environment / Config ---
+.env
+*.ini
+*.cfg
+
+# --- Jupyter / Notebooks ---
+.ipynb_checkpoints/
+*.ipynb
+
+# --- System / Editor files ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# --- Git ---
+.gitignore
