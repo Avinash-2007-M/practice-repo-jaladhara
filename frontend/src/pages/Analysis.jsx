@@ -1,0 +1,6 @@
+import { Link } from "react-router-dom";
+import { FileBarChart } from "lucide-react";
+import { useAnalysis } from "../context/AnalysisContext";
+import CompanyTable from "../components/CompanyTable";
+import EmptyState from "../components/EmptyState";
+export default function Analysis() { const { analysis } = useAnalysis(); if (!analysis) return <EmptyState title="No CSR analysis available." text="Upload a dataset to view live analysis results." action={<Link className="button" to="/upload">Upload dataset</Link>}/>; const companies=Array.isArray(analysis.companies)?analysis.companies:[]; return <><section className="analysis-banner glass"><span><FileBarChart/></span><div><p className="eyebrow">ANALYSIS COMPLETE</p><h2>{analysis.fileName || "CSR dataset"}</h2><p>{analysis.totalCompanies ?? analysis.count ?? companies.length} companies returned by the backend.</p></div><Link className="button secondary" to="/upload">New analysis</Link></section><section className="panel glass"><div className="panel-heading"><div><p className="eyebrow">RESULTS</p><h2>Top analyzed companies</h2></div><p className="muted">{companies.length} visible result{companies.length === 1 ? "" : "s"}</p></div>{companies.length ? <CompanyTable companies={companies}/> : <p className="empty-inline">The API completed but did not return company rows for this analysis.</p>}</section></>; }
